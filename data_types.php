@@ -4,14 +4,14 @@
 
 $personName = "Akram Khan";
 
-var_dump($personName); // var_dump -> buiding function.
+var_dump($personName); // var_dump -> buiding function. // devloper tools
 
 // var_dump() as like consol.log();
 
 echo "<br>";
 
 
-//integer  - number . without dodet
+//integer  - number . without decimal
 $personAge = 25;
 var_dump($personAge);
 
@@ -73,6 +73,13 @@ echo "<br>";
     a Multi line 
     comments
 */
+
+/**
+ * 
+ * 
+ * 
+ * 
+ * */
 
 
 $x = 123;
