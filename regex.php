@@ -28,17 +28,20 @@ echo "<br>";
 
 #regex pattern
 //[] - charackter classes
+//{} - quantifier
+//() - group
 
-$mobile ="017111111111";
-$pettern ="/^01[0-9]*.{9,}$/";
+
+$mobile ="01909120886";
+$pettern ="/^01[0-9]{9}$/";
 
 echo preg_match($pettern, $mobile);
 
 echo "<br>";
 
 #regex strong password verification
-$password = "123456789";
-$pattern = "/^[a-zA-Z0-9@#$%]{8,}$/";
+$password = "aA@45678";
+$pattern = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})/";
 
 echo preg_match($pettern, $password);
 

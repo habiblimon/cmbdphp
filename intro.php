@@ -26,6 +26,8 @@
 
 //PHP Intelephense
 //Tabnine extension AI tools
+//Bootstrap IntelliSense
+
 
 
 

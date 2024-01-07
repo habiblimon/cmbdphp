@@ -2,7 +2,7 @@
 # array function 
 
 
-$names  = array ("kamal", "jamal", "Tomal");
+$names  = array("kamal", "jamal", "Tomal");
 
 print_r($names);
 
@@ -55,11 +55,12 @@ var_dump(array_key_exists("city", $myInfon));
 #array_push     => add new value in array items at last.
 #array_pop      => last value remove from array.
 #array_value    => 
-#array_map      
+#array_map      =>
 
 array_map(function($n){
 echo $n."<br>";
 }, $names);
+
 
 
 #array_uniq
@@ -70,10 +71,11 @@ echo "<br>";
 
 print_r($unique_person);
 
-#array_slice()
+#array_slice() // 
 #array_diff() 
 #array_search()
 #array_reserse()
+#
 
 
 
