@@ -15,6 +15,8 @@ if ($age <= 12) {
 
 echo "<br>";
 
+
+
 //switch statement
 $day = "friday";
 
@@ -67,6 +69,8 @@ if(isset($country)){
     echo "Country is Not set <br>";
 
 }
+
+//Null coalescing operator.
 
 echo $country ?? "country is Not set - single line code <br>";
 

@@ -25,6 +25,9 @@
 #php Extrention 
 
 //PHP Intelephense
+//Tabnine extension AI tools
+
+
 
 
 
