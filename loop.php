@@ -22,7 +22,7 @@ do{
     echo $y."<br>";
     $y++;
 
-}while($y <36);
+}while($y <16);
 
 
 
@@ -36,11 +36,12 @@ for ($i=0; $i < 5; $i++) {
 
 $color =  ["red", "green", "blue", "yellow"];
 foreach($color as $value){
-    echo $value."<br>";
+    echo $value.",";
+    echo "<br>";
 }
 
 
-$ghor = 11;
+$ghor = 5;
 
 for ($i=1; $i <= 10; $i++) { 
     echo $ghor." X ".$i." = ".$ghor*$i."<br>";
