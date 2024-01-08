@@ -12,6 +12,7 @@
     if(isset($_POST['sub123']) && $_SERVER['REQUEST_METHOD'] == "POST"){
         $name   = clean($_POST['name']);
         $email  = clean($_POST['email']);
+        $gender  = clean($_POST['gender'] ?? null);
 
         if(empty($name)){
             $errName = "Please enter your name";
@@ -22,12 +23,19 @@
             $crrName = $name;
         }
 
+
         if(empty($email)){
             $errEmail = "Please enter your email";
         }elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $errEmail = "Please enter a valid email";
         }else{
             $crrEmail = $email;
+        }
+
+        if(empty($gender)){
+            $errGender = "Please select your gender";
+        }else{
+            $crrGender = $gender;
         }
 
 
@@ -80,6 +88,23 @@
                         </div>
                         <div class="valid-feedback">
                             <?= $crrEmail ?? null; ?>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <!-- Gender -->
+                        <div for="" class="form-check form-check-inline">
+                            <label for="male" class="form-check-label">Gender : </label>
+                        </div>
+                        <div for="" class="form-check form-check-inline">
+                            <input type="radio"  value="Male" class="form-check-input" id="male" name="gender" <?= isset($gender) && $gender == "Male"? "checked":null; ?>>
+                            <label for="male" class="form-check-label">Male</label>
+                        </div>
+                        <div for="" class="form-check form-check-inline">
+                            <input type="radio"  value="Female" class="form-check-input" id="female" name="gender" <?= isset($gender) && $gender == "Female"? "checked":null; ?>>
+                            <label for="female" class="form-check-label">Female</label>
+                        </div>
+                        <div class="form-check form-check-inline text-danger ">
+                            <?= $errGender ?? null; ?>
                         </div>
                     </div>
                     <input type="submit" class="btn btn-dark btn-lg" name="sub123">
