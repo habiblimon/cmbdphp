@@ -13,6 +13,8 @@
         $name   = clean($_POST['name']);
         $email  = clean($_POST['email']);
         $gender  = clean($_POST['gender'] ?? null);
+        $pass = clean($_POST['pass'])?? null;
+        $cpass = clean($_POST['cpass'])?? null;  
 
         if(empty($name)){
             $errName = "Please enter your name";
@@ -36,6 +38,23 @@
             $errGender = "Please select your gender";
         }else{
             $crrGender = $gender;
+        }
+
+
+        if(empty($pass)){
+            $errPass = "Please enter your password";
+        }elseif(!preg_match("/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,}$/", $pass)){
+            $errPass = "Password must be at least 8 characters";
+        }else{
+            $crrPass = $pass;
+        }
+
+        if(empty($cpass)){
+            $errCPass = "Please confirm your password";
+        }elseif($pass!= $cpass){
+            $errCPass = "Passwords do not match";
+        }else{
+            $crrCPass = $cpass;
         }
 
 
@@ -107,6 +126,35 @@
                             <?= $errGender ?? null; ?>
                         </div>
                     </div>
+
+
+                    <!-- Password & Re-type password validation  -->
+                    <div class="mb-3 form-floating ">
+                        <input type="password" placeholder="Password" name="pass" class="form-control <?= isset($errPass)? 'is-invalid':null;?> <?= isset($crrPass)? 'is-valid': null;?>" value="">
+                        <label for="">Password</label>
+                        <div class="invalid-feedback">
+                            <?= $errPass?? null;?>
+                        </div>
+                        <div class="valid-feedback">
+                            <?= isset($crrPass)? 'Accepted Your Strong Password':null; ?>
+                        </div>
+                    </div>
+
+                    <!-- Confrim password validation  -->
+                    <div class="mb-3 form-floating ">
+                        <input type="password" placeholder="<PASSWORD>" name="cpass" class="form-control <?= isset($errCPass)? 'is-invalid':null;?> <?= isset($crrCPass)? 'is-valid': null;?>" value="">
+                        <label for="">Confirm Password</label>
+                        <div class="invalid-feedback">
+                            <?= $errCPass?? null;?>
+                        </div>
+                        <div class="valid-feedback">
+                            <?= isset($crrCPass)? 'Accepted Your Strong Password':null;?>
+                        </div>
+                    </div>
+                   
+
+
+
                     <input type="submit" class="btn btn-dark btn-lg" name="sub123">
                 </form>
             </div>
