@@ -1,7 +1,7 @@
 <?php 
-    include('');
-    include_once(''); // only one time showing 
-    require_once(''); // only one time showing 
+    //include('');
+    //include_once(''); // only one time showing 
+    //require_once(''); // only one time showing 
 
     if(isset($_POST['submit'])){
        $fileName =  $_FILES['file']['name'];

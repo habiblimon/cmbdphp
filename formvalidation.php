@@ -111,6 +111,7 @@
                     </div>
                     <div class="mb-3">
                         <!-- Gender -->
+                        
                         <div for="" class="form-check form-check-inline">
                             <label for="male" class="form-check-label">Gender : </label>
                         </div>
